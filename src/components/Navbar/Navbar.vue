@@ -1,7 +1,7 @@
 <template>
   <nav>
     <v-app-bar app elevation="0">
-      <!-- <v-app-bar-nav-icon class="d-md-none" @click.stop="drawer = !drawer"></v-app-bar-nav-icon> -->
+      <v-app-bar-nav-icon class="d-md-none" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title class="text-uppercase ">
         <img src="@/assets/logo 1.png" alt="" />
       </v-toolbar-title>
