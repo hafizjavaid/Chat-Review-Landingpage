@@ -1,7 +1,7 @@
 <template>
-  <nav>
+  <div class="nvbar">
     <v-app-bar app elevation="0">
-      <v-app-bar-nav-icon class="d-md-none" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <!-- <v-app-bar-nav-icon class="d-md-none" @click.stop="drawer = !drawer"></v-app-bar-nav-icon> -->
       <v-toolbar-title class="text-uppercase ">
         <img src="@/assets/logo 1.png" alt="" />
       </v-toolbar-title>
@@ -19,7 +19,7 @@
         Login
       </v-btn>
     </v-app-bar>
-    <v-navigation-drawer v-model="drawer" app>
+    <!-- <v-navigation-drawer v-model="drawer" app>
       <v-list flat>
         <v-list-item
           v-for="link in links"
@@ -33,8 +33,8 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
-    </v-navigation-drawer>
-  </nav>
+    </v-navigation-drawer> -->
+  </div>
 </template>
 <script>
 // import Popup from './Popup.vue'
@@ -58,7 +58,7 @@ export default {
 nav {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) !important;
   background: #fff;
-  /* margin-bottom: 20px; */
+
 }
 .nav_text {
   background: none !important;

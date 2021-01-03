@@ -2,7 +2,7 @@
   <section class="about_section">
     <v-container fluid>
       <v-row>
-        <v-col cols="12" sm="7" md="8">
+        <v-col cols="12" md="8">
           <h1>Why Chat Review</h1>
           <p>
             Trustpilot is free and open to every company and consumer
@@ -23,7 +23,7 @@
           </p>
           <v-btn class="chat_btn">Why Chat Review</v-btn>
         </v-col>
-        <v-col cols="12" sm="5" md="4">
+        <v-col cols="12" md="4">
           <div class="why_img">
             <img src="@/assets/Why.jpg" alt="" />
           </div>
@@ -90,6 +90,7 @@ export default {};
   }
 
   .why_img {
+    text-align: center;
     img {
       max-width: 100%;
       height: auto;

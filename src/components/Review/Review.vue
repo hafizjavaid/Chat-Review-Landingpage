@@ -144,6 +144,7 @@ export default {
     transition: transform 0.2s linear;
     cursor: pointer;
     z-index: 99;
+   
   }
   .swiper-prev {
     background-color: #000;
@@ -154,7 +155,15 @@ export default {
     align-items: center;
 
     transform: translate(0%, -50%);
-    left: 53%;
+    left: 46%;
+    @media(max-width:812px)
+    {
+      left: 42%;
+    }
+    @media(max-width:480px)
+    {
+      left: 38%;
+    }
   }
   .swiper-next {
     left: unset;
@@ -167,7 +176,20 @@ export default {
     align-items: center;
     color: #fff;
     transform: translate(0%, -50%);
-    right: 40%;
+    right: 46%;
+    // margin-right: 10px;
+     @media(max-width:1060px)
+    {
+      right: 43%;
+    }
+     @media(max-width:580px)
+    {
+      right: 40%;
+    }
+     @media(max-width:390px)
+    {
+      right: 36%;
+    }
   }
 
 }

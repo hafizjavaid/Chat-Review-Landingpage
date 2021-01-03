@@ -3,19 +3,23 @@
   <Navbar></Navbar>
   <br>
    <router-view></router-view>
+   <Footer></Footer>
  </div>
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld';
 import Navbar from "./components/Navbar/Navbar"
+import Footer from "./components/Footer/Footer"
+
 
 export default {
   name: 'App',
 
   components: {
     // HelloWorld,
-    Navbar
+    Navbar,
+    Footer
   },
 
   data: () => ({
@@ -43,6 +47,9 @@ header{
 }
 .v-navigation-drawer--fixed{
   z-index: 9999 !important;
+}
+.v-overlay__scrim{
+  // display: none !important;
 }
 
 </style>

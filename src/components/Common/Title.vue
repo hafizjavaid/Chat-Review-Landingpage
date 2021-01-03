@@ -21,5 +21,9 @@ letter-spacing: 0.5px;
 color: #000051;
 margin: 0;
 margin-bottom: 40px;
+@media(max-width: 450px)
+{
+  font-size: 35px;
+}
    }
 </style>
