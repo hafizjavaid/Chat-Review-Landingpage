@@ -1,7 +1,7 @@
 <template>
  <div>
   <Navbar></Navbar>
-  <br>
+  
    <router-view></router-view>
    <Footer></Footer>
  </div>
@@ -50,6 +50,9 @@ header{
 }
 .v-overlay__scrim{
   // display: none !important;
+}
+.v-overlay.v-overlay--active{
+  display: none !important;
 }
 
 </style>
