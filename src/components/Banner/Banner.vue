@@ -2,21 +2,21 @@
   <v-app class="banner_section">
     <v-container fluid>
       <v-row>
-        <div class="banner_text d-flex align-center col-md-6">
+        <v-col class="banner_text d-flex align-center" cols="12" md="6">
           <div class="banner_text_inner">
             <h1>Behind every review is an <br> experience that matters</h1>
             <p>Read reviews. Write reviews. Find companies.</p>
             <v-btn class="chat_btn">Why Chat Review</v-btn>
           </div>
-        </div>
-        <div class="col-md-6 banner_img">
+        </v-col>
+        <v-col class="banner_img" cols="12" md="6">
           <div class="banner_img_inner">
             <div>
                <img src="@/assets/Banner.jpg" alt="">
             </div>
           
           </div>
-        </div>
+        </v-col>
       </v-row>
     </v-container>
   </v-app>
@@ -59,6 +59,9 @@ export default {};
          @media(max-width:600px)
        {
         font-size: 25px;
+        br{
+          display: none;
+        }
        }
          @media(max-width:500px)
        {

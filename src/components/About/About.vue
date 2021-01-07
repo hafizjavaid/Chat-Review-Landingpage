@@ -1,5 +1,5 @@
 <template>
-  <section class="about_section">
+  <v-app class="about_section">
     <v-container fluid>
       <v-row>
         <v-col cols="12" md="8">
@@ -30,7 +30,7 @@
         </v-col>
       </v-row>
     </v-container>
-  </section>
+  </v-app>
 </template>
 
 <script>

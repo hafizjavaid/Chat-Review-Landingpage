@@ -8,7 +8,6 @@
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld';
 import Navbar from "./components/Navbar/Navbar"
 import Footer from "./components/Footer/Footer"
 
@@ -43,13 +42,27 @@ export default {
 header{
   height: 72px !important;
    z-index: 999 !important;
- 
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
+   @media(max-width: 800px)
+   {
+     box-shadow: none !important;
+   }
+   @media(max-width: 600px)
+   {
+    height: 60px !important;
+   }
+ .v-toolbar__content{
+   height: 100% !important;
+   align-items: center;
+   .v-toolbar__title{
+     height: 100%;
+    display: flex;
+    align-items: center;
+   }
+ }
 }
 .v-navigation-drawer--fixed{
   z-index: 9999 !important;
-}
-.v-overlay__scrim{
-  // display: none !important;
 }
 .v-overlay.v-overlay--active{
   display: none !important;

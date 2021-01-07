@@ -12,9 +12,6 @@
    <!-- Review -->
    <Review></Review>
   </v-main>
-
-  <v-footer app>
-  </v-footer>
 </div>
 </template>
 
@@ -36,3 +33,14 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+@media(max-width: 800px)
+{
+.v-main{
+  padding-top: 0px !important;
+}
+}
+
+
+</style>
