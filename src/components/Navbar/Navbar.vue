@@ -138,6 +138,7 @@ nav {
     &:focus {
       outline: none;
     }
+    
   }
 }
 .d-none_{
@@ -184,7 +185,12 @@ nav {
       @media(max-width: 600px)
    {
     height: 40px;
+    max-width: 90%;
    }
+   @media(max-width: 568px)
+    {
+      
+    }
     width: 100%;
     // margin-left: 65px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));

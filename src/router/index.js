@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '../views/Form.vue';
 import Signup from '../views/Form.vue';
+import Verification from '@/components/Form/Verification';
+
 
 Vue.use(VueRouter)
 
@@ -22,6 +24,11 @@ const routes = [
     path: '/signup',
     name: 'Signin',
     component: Signup
+  },
+  {
+    path: '/signup/verific',
+    name: 'Verification',
+    component: Verification
   }
 ]
 

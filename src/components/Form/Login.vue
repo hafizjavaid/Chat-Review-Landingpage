@@ -52,7 +52,7 @@
                 </defs>
               </svg>
             </span>
-            <v-form ref="form" v-model="valid" lazy-validation>
+            <v-form ref="form" v-model="valid" id="auth_form" lazy-validation>
               <!-- <input type="text" placeholder="Name" /> -->
                <v-text-field :rules="nameRules" required v-model="name" class="input_field" placeholder="Name"></v-text-field>
                <v-text-field :rules="emailRules" required v-model="email" v-if="!login" class="input_field" placeholder="Email"></v-text-field>
@@ -61,7 +61,7 @@
 
               <!-- <input type="email" placeholder="Email" />
               <input type="password" placeholder="Password" /> -->
-                <vue-tel-input-vuetify data-app v-model="phone" v-if="!login" class="input_field phone" placeholder="" label="" autocomplete="off" ></vue-tel-input-vuetify>
+                <vue-tel-input-vuetify data-app v-model="country" v-on:country-changed="countryChanged" v-if="!login" class="phone" placeholder="" label="" autocomplete="off" ></vue-tel-input-vuetify>
 
               <v-btn class="sign_btn">
                 {{ login ? 'Login' : 'Signup' }}
@@ -86,6 +86,7 @@ export default {
      valid:false,
      login:true,
      phone: null,
+     country:null,
      name:'',
      nameRules: [
         v => !!v || 'Name is required',
@@ -100,7 +101,8 @@ export default {
       passwordRules:[
         v => !!v || 'Password is required',
         v => v.length > 6 || 'Password must be greater than 6 characters',
-      ]
+      ],
+ 
    }
   },
 
@@ -108,7 +110,10 @@ export default {
     validate() {
       this.$refs.form.validate();
     },
-
+ countryChanged(country) {
+      this.country = country.dialCode
+      console.log(this.country);
+    },
 
   },
 watch:{
@@ -133,11 +138,12 @@ components:{
 <style lang="scss" scoped>
 .form_text {
   width: 100%;
-  height: calc(100vh - 90px);
+  height: calc(100vh - 74px);
   background-color: #000051;
   display: flex;
 
   align-items: center;
+  margin-top: -9px;
   @media (max-width: 960px) {
     justify-content: center;
   }
