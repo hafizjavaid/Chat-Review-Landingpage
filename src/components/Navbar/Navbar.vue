@@ -20,7 +20,7 @@
           {{ link.text }}
         </v-btn>
       </div>
-      <v-btn class="login_text d-none d-sm-flex" elevation="0"> Login </v-btn>
+      <v-btn class="login_text d-none d-sm-flex" elevation="0" to="/login"> Login </v-btn>
        <v-app-bar-nav-icon
         class="d-md-block_ d-none_"
         @click.stop="drawer = !drawer"
@@ -39,7 +39,7 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
-        <v-btn class="login_text_mobile d-sm-flex justify-md-center align-md-center" elevation="0"> Login </v-btn>
+        <v-btn class="login_text_mobile d-sm-flex d-none justify-md-center align-md-center" elevation="0" to="/login"> Login </v-btn>
     </v-navigation-drawer>
       <form action="" class="d-smd_">
         <input type="text" placeholder="Search" />
@@ -181,6 +181,10 @@ nav {
     border-radius: 0px;
     max-width: 308px;
     height: 50px;
+      @media(max-width: 600px)
+   {
+    height: 40px;
+   }
     width: 100%;
     // margin-left: 65px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));

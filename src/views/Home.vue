@@ -12,6 +12,7 @@
    <!-- Review -->
    <Review></Review>
   </v-main>
+  <Footer></Footer>
 </div>
 </template>
 
@@ -22,6 +23,8 @@ import About from "@/components/About/About"
 import Counter from "@/components/Counter/Counter"
 import Work from "@/components/Work/Work"
 import Review from "@/components/Review/Review"
+import Footer from "@/components/Footer/Footer"
+
 export default {
   name: 'Home',
   components: {
@@ -29,7 +32,8 @@ export default {
    About,
    Counter,
    Work,
-   Review
+   Review,
+   Footer
   }
 }
 </script>

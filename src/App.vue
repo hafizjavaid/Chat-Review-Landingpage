@@ -3,13 +3,12 @@
   <Navbar></Navbar>
   
    <router-view></router-view>
-   <Footer></Footer>
+   
  </div>
 </template>
 
 <script>
 import Navbar from "./components/Navbar/Navbar"
-import Footer from "./components/Footer/Footer"
 
 
 export default {
@@ -18,7 +17,7 @@ export default {
   components: {
     // HelloWorld,
     Navbar,
-    Footer
+    
   },
 
   data: () => ({
@@ -66,6 +65,57 @@ header{
 }
 .v-overlay.v-overlay--active{
   display: none !important;
+}
+.f_password {
+  color: #085bd7 !important;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 20px;
+  margin-top: 11px !important;
+  display: inline-block;
+}
+.input_field{
+      display: block;
+      width: 100%;
+      height: 56px;
+      margin-bottom: 28px;
+      background: #ffffff;
+      border: 2px solid #000051 !important;
+      box-sizing: border-box;
+      padding: 5px 14px;
+      // border: none !important;
+
+      &::placeholder {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 20px;
+        letter-spacing: 0.5px;
+        color: #bbbbbb;
+      }
+      &:focus {
+        outline: none;
+        border-width: 2px !important;
+      }
+}
+.v-input .v-input__slot:before{
+  display: none !important;
+}
+.v-input .v-input__slot:after{
+  display: none !important;
+}
+.v-messages__message{
+  margin-top: 9px;
+}
+.v-input input{
+   &:focus {
+       
+    }
+}
+.input_field.phone{
+  background-color: none !important;
 }
 
 </style>
