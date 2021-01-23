@@ -61,7 +61,7 @@
 
               <!-- <input type="email" placeholder="Email" />
               <input type="password" placeholder="Password" /> -->
-                <vue-tel-input-vuetify data-app v-model="country" v-on:country-changed="countryChanged" v-if="!login" class="phone" placeholder="" label="" autocomplete="off" ></vue-tel-input-vuetify>
+                <vue-tel-input-vuetify data-app v-model="country" @change="changing" value="country" v-on:country-changed="countryChanged" v-if="!login" class="phone" placeholder="" label="" autocomplete="off" ></vue-tel-input-vuetify>
 
               <v-btn class="sign_btn">
                 {{ login ? 'Login' : 'Signup' }}
@@ -87,6 +87,7 @@ export default {
      login:true,
      phone: null,
      country:null,
+     code:null,
      name:'',
      nameRules: [
         v => !!v || 'Name is required',
@@ -113,7 +114,11 @@ export default {
  countryChanged(country) {
       this.country = country.dialCode
       console.log(this.country);
+      this.code = this.country;
     },
+    changing(){
+       this.country = this.code;
+    }
 
   },
 watch:{

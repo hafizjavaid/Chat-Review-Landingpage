@@ -53,6 +53,8 @@ export default {
     drawer: false,
     links: [
       { text: " Home", route: "/" },
+      { text: "About", route: "/about" },
+
       { text: "Features", route: "/feature" },
       { text: "FAQs", route: "/faqs" },
       { text: "Contact", route: "/contact" },

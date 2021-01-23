@@ -4,15 +4,15 @@
       <v-row>
         <v-col class="banner_text d-flex align-center" cols="12" md="6">
           <div class="banner_text_inner">
-            <h1>Behind every review is an <br> experience that matters</h1>
-            <p>Read reviews. Write reviews. Find companies.</p>
+            <h1>{{banner.title1}} <br> {{banner.title2}}</h1>
+            <p>{{banner.description}}</p>
             <v-btn class="chat_btn">Why Chat Review</v-btn>
           </div>
         </v-col>
         <v-col class="banner_img" cols="12" md="6">
           <div class="banner_img_inner">
             <div>
-               <img src="@/assets/Banner.jpg" alt="">
+               <img :src="banner.img" alt="">
             </div>
           
           </div>
@@ -23,7 +23,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props:['banner']
+};
 </script>
 
 <style lang="scss" scoped>
@@ -111,6 +113,7 @@ export default {};
   }
   .banner_img {
     height: calc(100vh - 72px);
+    
      @media(max-width:960px)
   {
     height: auto;
