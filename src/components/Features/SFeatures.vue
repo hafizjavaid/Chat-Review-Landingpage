@@ -30,7 +30,7 @@ export default {
   border-radius: 0px;
   @media(max-width:400px)
   {
-    padding: 0px 30px 30px;
+    padding: 0px 30px 80px;
   }
 }
 img {
@@ -71,4 +71,5 @@ h3 {
   color: #061134;
   margin: 0;
 }
+
 </style>

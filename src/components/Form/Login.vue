@@ -3,7 +3,7 @@
     <v-container fluid>
       <v-row>
         <!-- Left Side -->
-        <v-col class="form_text" cols="12" md="6">
+        <v-col class="form_text" cols="12" md="6" order-md="1">
           <div class="form_text_inner">
             <h1 color="primary">Hello, Friend</h1>
             <p>Enter your details to {{ login ? 'Login' : 'Signup' }}</p>
@@ -18,7 +18,7 @@
         </v-col>
         <!-- Left Side -->
         <!-- Right Side -->
-        <v-col class="main_form" cols="12" md="6">
+        <v-col class="main_form" cols="12" md="6" order-md="2">
           <div class="main_form_inner">
             <h1>{{ login ? 'Login' : 'Signup' }} to</h1>
             <span>
@@ -112,12 +112,13 @@ export default {
       this.$refs.form.validate();
     },
  countryChanged(country) {
-      this.country = country.dialCode
-      console.log(this.country);
+      this.country = "+ " + country.dialCode
+     
       this.code = this.country;
     },
     changing(){
-       this.country = this.code;
+       this.country = "+ " + this.code;
+        console.log(this.country.length);
     }
 
   },
@@ -131,6 +132,15 @@ watch:{
         else{
           this.login = false;
         }
+    },
+    computed:{
+      observer(){
+        if(this.country.value.length >= 3)
+        {
+          return false;
+        }
+        return true;
+      }
     }
 },
 components:{
@@ -151,6 +161,8 @@ components:{
   margin-top: -9px;
   @media (max-width: 960px) {
     justify-content: center;
+    order: 2;
+    margin-top: 20px;
   }
   .form_text_inner {
     margin-left: 65px;

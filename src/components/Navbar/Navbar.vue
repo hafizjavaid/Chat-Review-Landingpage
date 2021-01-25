@@ -20,7 +20,9 @@
           {{ link.text }}
         </v-btn>
       </div>
-      <v-btn class="login_text d-none d-sm-flex" elevation="0" to="/login"> Login </v-btn>
+      <v-btn class="login_text d-none d-sm-flex" elevation="0" to="/login" v-if="login"> Login </v-btn>
+      <v-btn class="login_text d-none d-sm-flex" elevation="0" to="/signup" v-else> Signup </v-btn>
+
        <v-app-bar-nav-icon
         class="d-md-block_ d-none_"
         @click.stop="drawer = !drawer"
@@ -39,7 +41,9 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
-        <v-btn class="login_text_mobile d-sm-flex d-none justify-md-center align-md-center" elevation="0" to="/login"> Login </v-btn>
+        <v-btn class="login_text_mobile d-sm-flex d-none justify-md-center align-md-center" elevation="0" to="/login" v-if="login"> Login </v-btn>
+        <v-btn class="login_text_mobile d-sm-flex d-none justify-md-center align-md-center" elevation="0" to="/signup" v-else> Signup </v-btn>
+
     </v-navigation-drawer>
       <form action="" class="d-smd_">
         <input type="text" placeholder="Search" />
@@ -51,6 +55,7 @@
 export default {
   data: () => ({
     drawer: false,
+    login:true,
     links: [
       { text: " Home", route: "/" },
       { text: "About", route: "/about" },
@@ -60,6 +65,19 @@ export default {
       { text: "Contact", route: "/contact" },
     ],
   }),
+  watch: {
+  $route (){
+
+        if(this.$router.currentRoute.path == '/login')
+        {
+          this.login = false;
+        }
+        else{
+          this.login = true;
+        }
+    }
+  }
+ 
 };
 </script>
 <style lang="scss" scoped>

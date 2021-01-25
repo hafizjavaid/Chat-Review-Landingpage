@@ -52,4 +52,7 @@ export default {
     padding-top: 0px !important;
   }
 }
+.v-application--wrap{
+  min-height:auto !important;
+}
 </style>
