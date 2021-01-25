@@ -28,6 +28,10 @@ export default {
   font-family: "Roboto", sans-serif;
   background: #f0f5ff;
   border-radius: 0px;
+  @media(max-width:400px)
+  {
+    padding: 0px 30px 30px;
+  }
 }
 img {
   width: 100%;

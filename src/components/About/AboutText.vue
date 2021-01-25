@@ -43,6 +43,10 @@ export default {};
   //   background: #f7f7f7;
   border-radius: 0px;
   padding: 100px 80px 80px;
+  @media(max-width:400px)
+  {
+    padding: 100px 30px 80px;
+  }
   font-family: "Roboto", sans-serif;
 
   h1 {
@@ -63,6 +67,12 @@ export default {};
     margin: 0;
     margin-bottom: 40px;
     text-align: justify;
+     @media(max-width:400px)
+  {
+    
+    text-align: left;
+
+  }
   }
 }
 </style>

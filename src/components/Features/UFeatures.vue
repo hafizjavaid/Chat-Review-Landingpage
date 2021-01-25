@@ -140,6 +140,10 @@ des : 'We supports files in any format: PowerPoint presentations, pdf, doc, mp3,
 .Ufeatures_section {
   padding: 0px 70px;
   font-family: "Roboto", sans-serif;
+   @media(max-width:400px)
+  {
+    padding: 0px 30px;
+  }
 
   h1 {
     font-style: normal;

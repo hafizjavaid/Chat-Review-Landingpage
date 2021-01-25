@@ -78,6 +78,12 @@ export default {
   border-radius: 0px;
   padding: 100px 80px 80px;
   font-family: "Roboto", sans-serif;
+      @media(max-width:400px)
+  {
+    padding: 100px 30px 80px;
+  
+
+  }
   h1 {
     font-style: normal;
     font-weight: normal;

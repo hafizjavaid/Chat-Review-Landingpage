@@ -119,6 +119,10 @@ export default {
 .features_section {
   padding: 100px 70px;
   font-family: "Roboto", sans-serif;
+  @media(max-width:400px)
+  {
+    padding: 100px 30px;
+  }
 
   h1 {
     font-style: normal;
