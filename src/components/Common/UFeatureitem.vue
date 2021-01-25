@@ -41,6 +41,10 @@ export default {
     transform: translateY(10px);
     background-color: #eee;
   }
+  @media(max-width: 600px)
+  {
+    margin-bottom: 10px;
+  }
 }
 .items > div{
   margin: 10px;

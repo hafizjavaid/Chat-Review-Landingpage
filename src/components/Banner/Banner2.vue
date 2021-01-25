@@ -1,23 +1,25 @@
 <template>
-  <v-app class="banner_section">
+  <section class="banner_section">
     <v-container fluid>
-      <v-row>
-        <v-layout class="d-flex flex-column justify-center align-center">
-          <div class="banner_text_inner">
-            <h1>
-              Turn customers into <br />
-              fanatics
-            </h1>
-            <p>Read reviews. Write reviews. Find companies.</p>
-            <v-btn class="chat_btn">Why Chat Review</v-btn>
-          </div>
-          <div class="banner_img">
-            <img src="@/assets/Frame.png" alt="" />
-          </div>
-        </v-layout>
-      </v-row>
+      <div class="d-flex flex-column justify-center align-center">
+        <!-- Child 1 -->
+        <div class="banner_text_inner">
+          <h1>
+            Turn customers into <br />
+            fanatics
+          </h1>
+          <p class="text-center">
+            Read reviews. Write reviews. Find companies.
+          </p>
+          <v-btn class="chat_btn">Why Chat Review</v-btn>
+        </div>
+        <!-- Child 1 -->
+        <div class="banner_img">
+          <img src="@/assets/Frame.png" alt="" />
+        </div>
+      </div>
     </v-container>
-  </v-app>
+  </section>
 </template>
 
 <script>
@@ -28,6 +30,7 @@ export default {};
 .banner_section {
   height: auto;
   background: #f7fafd;
+  padding-bottom: 40px;
 
   .banner_text_inner {
     margin-top: 50px;
@@ -61,10 +64,11 @@ export default {};
       margin-top: 10px;
       margin-bottom: 32px;
       color: #253368;
+      text-align: center;
       @media (max-width: 550px) {
         font-size: 18px;
-      
-    padding-left: 26px;
+
+        padding-left: 26px;
       }
     }
     .chat_btn {
@@ -98,14 +102,26 @@ export default {};
       }
     }
   }
-  .banner_img {
-    @media (max-width: 960px) {
-      height: auto;
-    }
-    @media (max-width: 500px) {
-      width: 100%;
-      object-fit: cover;
+}
+.banner_img {
+  @media(min-width:1000px)
+  {
+ img{
+    // text-align: center;
+    display: block;
+    margin:0 auto;
+  }
+  }
+ 
+  @media (max-width: 960px) {
+    height: auto;
+  }
+  @media (max-width: 990px) {
+    img {
+      width: 100% !important;
+      object-fit: cover !important;
     }
   }
 }
+
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <v-app class="about_section">
+  <section class="about_section">
     <v-container fluid>
       <v-row>
         <v-col cols="12" sm="3">
@@ -31,7 +31,7 @@
         </v-col>
       </v-row>
     </v-container>
-  </v-app>
+  </section>
 </template>
 
 <script>
@@ -40,11 +40,10 @@ export default {};
 
 <style lang="scss" scoped>
 .about_section {
-  //   background: #f7f7f7;
+  background: #f7f7f7;
   border-radius: 0px;
-  padding: 100px 80px 80px;
-  @media(max-width:400px)
-  {
+  padding: 100px 80px 100px;
+  @media (max-width: 400px) {
     padding: 100px 30px 80px;
   }
   font-family: "Roboto", sans-serif;
@@ -52,9 +51,11 @@ export default {};
   h1 {
     font-style: normal;
     font-weight: normal;
-    font-size: 30px;
+    font-size: 35px;
     line-height: 36px;
     color: #0d1016;
+    position: sticky;
+    top: 80px;
     @media (max-width: 540px) {
       text-align: center !important;
     }
@@ -62,17 +63,14 @@ export default {};
   p {
     font-style: normal;
     font-weight: normal;
-    font-size: 24px;
+    font-size: 22px;
     color: #0d1016;
     margin: 0;
     margin-bottom: 40px;
     text-align: justify;
-     @media(max-width:400px)
-  {
-    
-    text-align: left;
-
-  }
+    @media (max-width: 400px) {
+      text-align: left;
+    }
   }
 }
 </style>

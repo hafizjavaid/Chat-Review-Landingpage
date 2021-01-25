@@ -75,7 +75,7 @@ nav {
   background: none !important;
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
+  font-size: 18px !important;
   line-height: 16px;
   letter-spacing: 0.5px;
   color: #000051 !important;
@@ -100,7 +100,7 @@ nav {
   border-radius: 2px;
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
+  font-size: 18px !important;
   line-height: 16px;
   letter-spacing: 0.5px;
   color: #000051;
@@ -124,6 +124,7 @@ nav {
      max-width: 90%;
   width: 100%;
       margin-left: 16px;
+      font-size: 16px !important;
   }
 }
 .d-smd-none_  {

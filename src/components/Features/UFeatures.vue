@@ -138,7 +138,7 @@ des : 'We supports files in any format: PowerPoint presentations, pdf, doc, mp3,
 <style lang="scss" scoped>
 
 .Ufeatures_section {
-  padding: 0px 70px;
+  padding: 100px 70px;
   font-family: "Roboto", sans-serif;
    @media(max-width:400px)
   {

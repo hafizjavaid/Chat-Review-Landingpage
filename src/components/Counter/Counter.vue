@@ -90,6 +90,7 @@ export default {
   background: url(../../assets/Counter-Bg.jpg);
   background-size: cover;
   position: relative;
+  padding: 80px 0;
 
   @media (max-width: 960px) {
     background-position: center;

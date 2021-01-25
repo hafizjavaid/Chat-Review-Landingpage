@@ -195,8 +195,8 @@ export default {
 }
 .review_section {
   background-color: #f7f7f7;
-  padding: 80px 0px;
-  margin: 30px 0;
+  padding: 100px 0px 150px;
+  // margin: 30px 0;
   .reviews {
     width: 100%;
     display: flex;

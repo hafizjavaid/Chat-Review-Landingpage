@@ -3,7 +3,7 @@
     <v-container fluid>
       <v-row>
         <v-col cols="12" sm="3">
-          <h1>Our team</h1>
+          <h1>Our Team</h1>
         </v-col>
         <v-col cols="12" sm="9">
          <TeamItems :team='team'></TeamItems>
@@ -87,9 +87,13 @@ export default {
   h1 {
     font-style: normal;
     font-weight: normal;
-    font-size: 30px;
+    font-size: 35px;
     color: #0d1016;
     margin: 0;
+     position: sticky;
+    // top: 90px;
+    top: 80px;
+
   }
   
 }

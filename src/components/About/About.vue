@@ -1,5 +1,5 @@
 <template>
-  <v-app class="about_section">
+  <section class="about_section">
     <v-container fluid>
       <v-row>
         <v-col cols="12" md="8">
@@ -30,7 +30,7 @@
         </v-col>
       </v-row>
     </v-container>
-  </v-app>
+  </section>
 </template>
 
 <script>
@@ -41,7 +41,7 @@ export default {};
 .about_section {
   background: #f7f7f7;
   border-radius: 0px;
-  padding: 60px 20px 80px 60px;
+  padding: 100px 20px 100px 60px;
 
   h1 {
     font-style: normal;

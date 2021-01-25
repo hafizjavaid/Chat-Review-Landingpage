@@ -1,5 +1,5 @@
 <template>
-  <v-app class="features_section">
+  <section class="features_section">
     <v-container fluid>
       <v-row>
         <v-col cols="12" sm="6" md="4">
@@ -13,7 +13,7 @@
         </v-col>
       </v-row>
     </v-container>
-  </v-app>
+  </section>
 </template>
 
 <script>
@@ -119,6 +119,7 @@ export default {
 .features_section {
   padding: 100px 70px;
   font-family: "Roboto", sans-serif;
+  // background-color: rebeccapurple;
   @media(max-width:400px)
   {
     padding: 100px 30px;
@@ -128,6 +129,8 @@ export default {
     font-style: normal;
     font-weight: normal;
     font-size: 48px;
+    position: sticky;
+    top: 80px;
 
     color: #061134;
     @media (max-width: 540px) {
@@ -143,5 +146,8 @@ export default {
       display: block;
     }
   }
+}
+.v-application--wrap{
+  min-height: auto;
 }
 </style>
