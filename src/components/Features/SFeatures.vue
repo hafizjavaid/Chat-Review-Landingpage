@@ -63,6 +63,10 @@ img {
     color: #061134;
     box-shadow: none;
   }
+  @media(max-width:600px)
+  {
+    margin: 19px auto 0;
+  }
 }
 h3 {
   font-style: normal;
@@ -70,6 +74,16 @@ h3 {
   font-size: 48px;
   color: #061134;
   margin: 0;
+   @media(max-width:600px)
+  {
+    text-align: center;
+  }
+    @media(max-width:400px)
+  {
+    text-align: center;
+    // font-size: 40px;
+  }
+  
 }
 
 </style>

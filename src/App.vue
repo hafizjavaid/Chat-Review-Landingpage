@@ -71,16 +71,24 @@ header {
   display: inline-block;
 }
 #auth_form {
-  .input_field, .v-input {
+  .v-textarea {
+    height: 152px !important;
+  }
+  .input_field,
+  .v-input {
     display: block;
     width: 100%;
     height: 56px;
-    margin-bottom: 28px;
+    margin-bottom: 29px;
     background: #ffffff;
     border: 2px solid #000051 !important;
     box-sizing: border-box;
     padding: 5px 14px;
     // border: none !important;
+
+    @media (max-width: 400px) {
+      height: 40px;
+    }
 
     &::placeholder {
       font-style: normal;
@@ -95,9 +103,9 @@ header {
       border-width: 2px !important;
     }
   }
-  .country-code{
+  .country-code {
     min-width: 100px !important;
-    .v-input{
+    .v-input {
       border-right: none !important;
     }
   }
@@ -110,6 +118,9 @@ header {
   .v-messages__message {
     margin-top: 9px;
     color: red;
+    @media (max-width: 400px) {
+      margin-top: 2px;
+    }
   }
 
   .input_field.phone {
@@ -117,6 +128,9 @@ header {
   }
   .v-input__control {
     margin-top: 7px !important;
+    @media (max-width: 400px) {
+      margin-top: -2px !important;
+    }
   }
 }
 
@@ -124,7 +138,7 @@ header {
   .v-input .v-input__slot:after {
     border: 2px solid #000051 !important;
   }
- 
+
   .v-input input {
     text-align: center;
   }

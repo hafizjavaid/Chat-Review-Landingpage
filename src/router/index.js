@@ -5,6 +5,8 @@ import About from '../views/About.vue'
 import Features from '../views/Features.vue'
 import Login from '../views/Form.vue';
 import Signup from '../views/Form.vue';
+import Contact from '../views/Contact.vue';
+
 import Verification from '@/components/Form/Verification';
 
 
@@ -27,6 +29,11 @@ const routes = [
     component: Features
   },
   {
+    path: '/contact',
+    name: 'Contact',
+    component: Contact
+  },
+  {
     path: '/login',
     name: 'Login',
     
@@ -47,6 +54,10 @@ const routes = [
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
+  scrollBehavior () {
+    return { x: 0, y: 0,behavior: 'smooth', }
+  },
+
   routes
 })
 

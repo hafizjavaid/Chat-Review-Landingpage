@@ -3,24 +3,17 @@
     <v-container fluid>
       <v-row>
         <!-- Left Side -->
-        <v-col class="form_text" cols="12" md="6" order-md="1">
-          <div class="form_text_inner">
-            <h1 color="primary">Hello, Friend</h1>
-            <p>Enter your details to {{ login ? 'Login' : 'Signup' }}</p>
-            <h3 class="d-block">OR</h3>
-            <v-btn class="sigin_btn flex justify-center align-center" to="/signup" v-if="login"
-              >Sign up</v-btn
-            >
-            <v-btn class="sigin_btn flex justify-center align-center" to="/login" v-else 
-              >Login</v-btn
-            >
-          </div>
-        </v-col>
+        <Formtext :login="login"></Formtext>
         <!-- Left Side -->
         <!-- Right Side -->
-        <v-col class="main_form" cols="12" md="6" order-md="2">
+        <v-col
+          cols="12"
+          md="6"
+          order-md="2"
+          :class="[login ? 'Login' : '', 'main_form']"
+        >
           <div class="main_form_inner">
-            <h1>{{ login ? 'Login' : 'Signup' }} to</h1>
+            <h1>{{ login ? "Login" : "Signup" }} to</h1>
             <span>
               <svg
                 width="240"
@@ -54,17 +47,44 @@
             </span>
             <v-form ref="form" v-model="valid" id="auth_form" lazy-validation>
               <!-- <input type="text" placeholder="Name" /> -->
-               <v-text-field :rules="nameRules" required v-model="name" class="input_field" placeholder="Name"></v-text-field>
-               <v-text-field :rules="emailRules" required v-model="email" v-if="!login" class="input_field" placeholder="Email"></v-text-field>
-               <v-text-field :rules="passwordRules" class="input_field" required v-model="password" placeholder="Password"></v-text-field>
+              <v-text-field
+                :rules="nameRules"
+                required
+                v-model="name"
+                class="input_field"
+                placeholder="Name"
+              ></v-text-field>
+              <v-text-field
+                :rules="emailRules"
+                required
+                v-model="email"
+                v-if="!login"
+                class="input_field"
+                placeholder="Email"
+              ></v-text-field>
+              <v-text-field
+                :rules="passwordRules"
+                class="input_field"
+                required
+                v-model="password"
+                placeholder="Password"
+              ></v-text-field>
 
-
-              <!-- <input type="email" placeholder="Email" />
-              <input type="password" placeholder="Password" /> -->
-                <vue-tel-input-vuetify data-app v-model="country" @change="changing" value="country" v-on:country-changed="countryChanged" v-if="!login" class="phone" placeholder="" label="" autocomplete="off" ></vue-tel-input-vuetify>
+              <vue-tel-input-vuetify
+                data-app
+                v-model="country"
+                @change="changing"
+                value="country"
+                v-on:country-changed="countryChanged"
+                v-if="!login"
+                class="phone"
+                placeholder=""
+                label=""
+                autocomplete="off"
+              ></vue-tel-input-vuetify>
 
               <v-btn class="sign_btn">
-                {{ login ? 'Login' : 'Signup' }}
+                {{ login ? "Login" : "Signup" }}
               </v-btn>
               <a href="#" class="f_password">Forgot Password?</a>
             </v-form>
@@ -78,149 +98,74 @@
 
 <script>
 // import VueTelInputVuetify from "vue-tel-input-vuetify";
+import Formtext from "../Common/Formtext";
 export default {
   // props:['login'],
-  data(){
-   return{
-    //  loginValue:this.login,
-     valid:false,
-     login:true,
-     phone: null,
-     country:null,
-     code:null,
-     name:'',
-     nameRules: [
-        v => !!v || 'Name is required',
-        v => v.length <= 10 || 'Name must be less than 10 characters',
+  data() {
+    return {
+      //  loginValue:this.login,
+      valid: false,
+      login: true,
+      phone: null,
+      country: null,
+      code: null,
+      name: "",
+      nameRules: [
+        (v) => !!v || "Name is required",
+        (v) => v.length <= 10 || "Name must be less than 10 characters",
       ],
-       email: '',
+      email: "",
       emailRules: [
-        v => !!v || 'E-mail is required',
-        v => /.+@.+/.test(v) || 'E-mail must be valid',
+        (v) => !!v || "E-mail is required",
+        (v) => /.+@.+/.test(v) || "E-mail must be valid",
       ],
-      password:'',
-      passwordRules:[
-        v => !!v || 'Password is required',
-        v => v.length > 6 || 'Password must be greater than 6 characters',
+      password: "",
+      passwordRules: [
+        (v) => !!v || "Password is required",
+        (v) => v.length > 6 || "Password must be greater than 6 characters",
       ],
- 
-   }
+    };
   },
 
   methods: {
     validate() {
       this.$refs.form.validate();
     },
- countryChanged(country) {
-      this.country = "+ " + country.dialCode
-     
+    countryChanged(country) {
+      this.country = "+ " + country.dialCode;
+
       this.code = this.country;
     },
-    changing(){
-       this.country = "+ " + this.code;
-        console.log(this.country.length);
-    }
-
-  },
-watch:{
-    $route (){
-
-        if(this.$router.currentRoute.path == '/login')
-        {
-          this.login = true;
-        }
-        else{
-          this.login = false;
-        }
+    changing() {
+      this.country = "+ " + this.code;
+      console.log(this.country.length);
     },
-    computed:{
-      observer(){
-        if(this.country.value.length >= 3)
-        {
+  },
+  watch: {
+    $route() {
+      if (this.$router.currentRoute.path == "/login") {
+        this.login = true;
+      } else {
+        this.login = false;
+      }
+    },
+    computed: {
+      observer() {
+        if (this.country.value.length >= 3) {
           return false;
         }
         return true;
-      }
-    }
-},
-components:{
-  // VueTelInputVuetify
-}
-
+      },
+    },
+  },
+  components: {
+    // VueTelInputVuetify
+    Formtext,
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-.form_text {
-  width: 100%;
-  height: calc(100vh - 74px);
-  background-color: #000051;
-  display: flex;
-
-  align-items: center;
-  margin-top: -9px;
-  @media (max-width: 960px) {
-    justify-content: center;
-    order: 2;
-    margin-top: 20px;
-  }
-  .form_text_inner {
-    margin-left: 65px;
-    @media (max-width: 960px) {
-      justify-content: center;
-      margin-left: 0px;
-    }
-    h1 {
-      font-style: normal;
-      font-weight: bold;
-      font-size: 40px;
-      line-height: 52px;
-      letter-spacing: 1.5px;
-      color: #ffffff;
-      margin: 0;
-      padding: 0;
-    }
-    p {
-      font-style: normal;
-      font-weight: normal;
-      font-size: 20px;
-      line-height: 28px;
-      letter-spacing: 0.5px;
-      color: #ffffff;
-      margin: 0;
-      margin-top: 5px;
-      padding: 0;
-    }
-    h3 {
-      margin: 0;
-      margin-top: 12px;
-      padding: 0;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 40px;
-      line-height: 52px;
-      letter-spacing: 1.5px;
-      color: #ffffff;
-    }
-    .sigin_btn {
-      max-width: 218px;
-      height: 56px;
-      background: transparent;
-      border: 1px solid #ffffff;
-      box-sizing: border-box;
-      border-radius: 2px;
-      width: 100%;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 20px;
-      text-align: center;
-      letter-spacing: 0.5px;
-      color: #ffffff;
-      text-transform: capitalize;
-      margin-top: 15px;
-    }
-  }
-}
 .main_form {
   width: 100%;
   height: calc(100vh - 90px);
@@ -232,6 +177,7 @@ components:{
     width: 100%;
     max-width: 470px;
     width: 100%;
+    // transform: translateY(13%);
 
     span {
       width: 100%;
@@ -240,36 +186,13 @@ components:{
     }
     h1 {
       text-align: center;
+      @media (max-width: 400px) {
+        font-size: 30px;
+      }
     }
   }
 
   form {
-    input {
-      // display: block;
-      // width: 100%;
-      // height: 56px;
-
-      // margin-bottom: 14px;
-      // background: #ffffff;
-      // border: 1px solid #000051;
-      // box-sizing: border-box;
-      // padding: 18px 14px;
-
-      // &::placeholder {
-      //   font-style: normal;
-      //   font-weight: normal;
-      //   font-size: 20px;
-      //   line-height: 20px;
-      //   letter-spacing: 0.5px;
-
-      //   color: #bbbbbb;
-      // }
-      // &:focus {
-      //   outline: none;
-      //   border-width: 2px;
-      // }
-     
-    }
     .sign_btn {
       width: 100%;
       height: 56px;
@@ -286,8 +209,17 @@ components:{
       letter-spacing: 0.5px;
       color: #ffffff;
       border-radius: none;
+      @media (max-width: 400px) {
+        height: 40px;
+        font-size: 16px;
+      }
     }
   }
 }
-
+.Login {
+  align-items: flex-start;
+  .main_form_inner {
+    transform: translateY(25%);
+  }
+}
 </style>
