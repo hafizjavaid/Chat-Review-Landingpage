@@ -3,7 +3,7 @@
   <v-col class="form_text" cols="12" md="6" order-md="1">
     <div class="form_text_inner">
       <h1 color="primary">Write to us</h1>
-     
+
       <div class="contact_items">
         <p>
           <span
@@ -88,8 +88,7 @@ export default {
   height: calc(100vh - 74px);
   background-color: #000051;
   display: flex;
-@media(max-width:400px)
-  {
+  @media (max-width: 400px) {
     height: 50vh;
   }
   align-items: center;
@@ -114,7 +113,7 @@ export default {
       color: #ffffff;
       margin: 0;
       padding: 0;
-       @media (max-width: 400px) {
+      @media (max-width: 400px) {
         font-size: 30px;
       }
     }
@@ -128,7 +127,7 @@ export default {
       margin: 0;
       margin-top: 5px;
       padding: 0;
-       @media (max-width: 400px) {
+      @media (max-width: 400px) {
         font-size: 16px;
       }
     }

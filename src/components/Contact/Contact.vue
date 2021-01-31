@@ -10,6 +10,7 @@
           <div class="main_form_inner">
             <v-form ref="form" v-model="valid" id="auth_form" lazy-validation>
               <!-- <input type="text" placeholder="Name" /> -->
+               <h1>Contact Us</h1>
               <v-text-field
                 :rules="nameRules"
                 required
@@ -78,7 +79,7 @@ export default {
       ],
      
        subjectRules: [
-        (v) => !!v || "subject is required",
+        (v) => !!v || "Subject is required",
         (v) => v.length >= 5 || "Subject must be grater than 10 characters",
       ],
       email: "",
@@ -118,6 +119,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  align-items: flex-start;
 
   .main_form_inner {
     width: 100%;
@@ -131,6 +133,7 @@ export default {
     }
     h1 {
       text-align: center;
+      margin-bottom: 10px;
     }
   }
 

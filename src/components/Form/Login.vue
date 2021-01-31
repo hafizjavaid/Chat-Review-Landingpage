@@ -171,13 +171,14 @@ export default {
   height: calc(100vh - 90px);
   display: flex;
   justify-content: center;
-  align-items: center;
+  // align-items: center;
+   align-items: flex-start;
 
   .main_form_inner {
     width: 100%;
     max-width: 470px;
     width: 100%;
-    // transform: translateY(13%);
+    // transform: translateY(10%);
 
     span {
       width: 100%;
